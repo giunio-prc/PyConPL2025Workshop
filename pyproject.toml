@@ -1,0 +1,35 @@
+[project]
+name = "pyconpl2025workshop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "fastapi[standard]>=0.116.1",
+  "python-dotenv>=1.1.0",
+  "unstructured>=0.17.2",
+  "langchain>=0.3.27",
+  "langchain-community>=0.3.23",
+  "langchain-cohere>=0.4.4",
+  "onnxruntime==1.20.1; platform_system == 'Windows'",
+  "chromadb>=1.0.13",
+  "langchain-chroma>=0.2.3",
+  "protobuf<=3.20"
+]
+
+[dependency-groups]
+dev = [
+  "pre-commit",
+  "ruff",
+  "pytest",
+  "mypy"
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["I", "E4", "E7", "E9", "F", "Q"]
+
+[tool.pytest.ini_options]
+pythonpath = "."
